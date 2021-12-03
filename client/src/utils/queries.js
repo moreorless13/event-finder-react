@@ -7,8 +7,14 @@ export const QUERY_ME = gql`
             email
             username
             savedEvents {
-                
+                eventId
+                eventName
+                eventDescription
+                startDate
+                endDate
+                latitude
+                longitude
             }
         }
     }
-`
+`;

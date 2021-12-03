@@ -22,4 +22,42 @@ export const ADD_USER = gql`
             }
         }
     }
-`
+`;
+
+export const SAVE_EVENT = gql`
+    mutation saveEvent($eventData: EventInput!) {
+        saveEvent(eventData: $eventData) {
+            _id
+            email
+            username
+            savedEvents {
+                eventId
+                eventName
+                eventDescription
+                startDate
+                endDate
+                latitude
+                longitude
+            }
+        }
+    }
+`;
+
+export const REMOVE_EVENT = gql`
+    mutation removeEvent($eventId: ID!) {
+        removeEvent(eventId: $eventId) {
+            _id
+            email
+            username
+            savedEvents {
+                eventId
+                eventName
+                eventDescription
+                startDate
+                endDate
+                latitude
+                longitude
+            }
+        }
+    }
+`;
