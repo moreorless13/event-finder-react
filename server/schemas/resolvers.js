@@ -4,6 +4,9 @@ const { User } = require('../models/User');
 
 const resolvers = {
     Query: {
+        user: async (parent, { profileId }) => {
+            return User.findOne({ _id: profileId })
+        },
         me: async (parent, args, context) => {
             if(context.user) {
                 const myData = await User.findOne({ _id: context.user._id }).select('-__v -password')
