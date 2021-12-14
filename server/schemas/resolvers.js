@@ -4,6 +4,9 @@ const { User } = require('../models/User');
 
 const resolvers = {
     Query: {
+        users: async () => {
+            return User.find()
+        },
         user: async (parent, { profileId }) => {
             return User.findOne({ _id: profileId })
         },
@@ -17,8 +20,8 @@ const resolvers = {
         }
     },
     Mutation: {
-        addUser: async (parent, args) => {
-            const user = await User.create(args);
+        addUser: async (parent, { email, username, password}) => {
+            const user = await User.create({ email, username, password });
             const token = signToken(user);
             return { token, user }
         },
