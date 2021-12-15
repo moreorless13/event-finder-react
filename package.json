@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/moreorless13/event-finder-react#readme",
   "dependencies": {
-    "concurrently": "^6.4.0"
+    "concurrently": "^6.4.0",
+    "dotenv": "^10.0.0"
   }
 }
