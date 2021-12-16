@@ -50,7 +50,7 @@ const SignUpForm = () => {
             console.log(data);
             Auth.login(data.addUser.token)
         } catch (error) {
-            console.error(error)            
+            console.error(error)
         }
 
         setUserFormData({
@@ -85,7 +85,7 @@ const SignUpForm = () => {
 
                 <Form.Group>
                     <Form.Label htmlFor="password">Password</Form.Label>
-                    <Form.Control type="paspassword" placeholder="Your email" name="password" onChange={handleInputChange} value={userFormData.password} required />
+                    <Form.Control type="password" placeholder="Your password" name="password" onChange={handleInputChange} value={userFormData.password} required />
                     <Form.Control.Feedback type="invalid">
                         Password is Required!
                     </Form.Control.Feedback>
