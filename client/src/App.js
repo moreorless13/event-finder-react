@@ -5,6 +5,7 @@ import { setContext } from '@apollo/client/link/context';
 import NavBar from './components/NavBar';
 import LoginForm from './components/LoginForm';
 import SignUpForm from './components/SignUpForm'
+import Dashboard from './pages/Dashboard';
 const httpLink = createHttpLink({
   uri: '/graphql',
 });
@@ -31,6 +32,7 @@ function App() {
         <div>
           <NavBar />
           <Switch>
+            <Route exact path='/dashboard' component={Dashboard} />
             <Route exact path="/signup" component={SignUpForm} />
             <Route exact path="/login" component={LoginForm} />
           </Switch>
