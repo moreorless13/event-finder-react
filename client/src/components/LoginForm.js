@@ -29,7 +29,7 @@ const LoginForm = () => {
         setUserFormData({ ...userFormData, [name]: value });
     };
 
-    const handleFormSubmit = (event) => {
+    const handleFormSubmit = async (event) => {
         event.preventDefault();
 
         const form = event.currentTarget;
